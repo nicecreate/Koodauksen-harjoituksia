@@ -1,2 +1,1 @@
-# Helsinki-matkailukohteena
-Helsingin nähtävyyksiä
+Koodauksen harjoituksia
