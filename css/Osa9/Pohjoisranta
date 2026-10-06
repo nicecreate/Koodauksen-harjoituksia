@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tervetuloa tulevaisuuden verkkosivuille</title>
+    <style>
+        /* Määritellään värit muuttujilla sivun yläosaan */
+        :root {
+            --background: #ff007717;       /* Vaaleanpunainen tausta kortille */
+            --surface: white;              /* Valkoinen kortin pinta */
+            --text: black;                 /* Musta teksti */
+            --accent: rgb(247, 122, 184);  /* Vaaleanpunainen korostusväri */
+            --on-accent: white;            /* Teksti painikkeen päällä */
+            --danger: red;                 /* Punainen danger-väri */
+        }
+
+        /* Nollataan oletusreunukset, jotta kuva ulottuu reunoihin asti */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+        }
+
+        /* 1. SIVUN YLÄLAITA: Hero-osio kaupunkikuvalla */
+        .hero-kaupunki {
+            /* Tumma suodatin (0.5) kuvan päällä varmistaa, että valkoinen teksti erottuu */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('kaupunkinakyma.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            
+            height: 60vh; /* Täyttää 60% ruudun korkeudesta */
+            
+            /* Keskittää tekstin kuvan päälle */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff; 
+            padding: 0 20px;
+        }
+
+        .hero-sisalto h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-sisalto p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Painike kuvan päällä */
+        .nappi {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--accent);
+            color: var(--on-accent);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .nappi:hover {
+            filter: brightness(0.9);
+        }
+
+        /* 2. SIVUN SISÄLTÖALUE: Keskittää kortin kuvan alapuolelle */
+        .sisalto-alue {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        /* Pinta elementtinä (article) */
+        article {
+            background-color: var(--surface);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            width: 320px;
+            text-align: center;
+        }
+
+        /* Painikkeiden perustyyli */
+        button {
+            background-color: var(--accent);
+            color: var(--on-accent);
+            border: none;
+            padding: 12px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        button:hover {
+            filter: brightness(0.9);
+        }
+
+        /* Ilmoitusten perustyyli (aluksi piilossa) */
+        .ilmoitus {
+            display: none;
+            margin-top: 10px;
+            color: green;
+            font-weight: bold;
+        }
+
+        .ilmoitus-danger {
+            display: none;
+            margin-top: 10px;
+            color: var(--danger);
+            font-weight: bold;
+            font-size: 14px;
+            padding: 8px;
+            background-color: #ffeef2;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO-OSIO SIVUN YLÄLAIDASSA -->
+    <section class="hero-kaupunki">
+        <div class="hero-sisalto">
+            <h1>Helsingin Pohjoisranta</h1>
+            <p>Rakennamme huomisen kaupunkeja. Tarjoamme monipuolisia digitaalisia palveluita ja moderneja ratkaisuja yrityksellesi urbaaniin ympäristöön.</p>
+            <a href="#yhteystiedot" class="nappi">Ota yhteyttä</a>
+        </div>
+    </section>
+
+    <!-- KORTTIALUE KUVAN ALAPUOLELLA -->
+    <div class="sisalto-alue">
+        <article>
+            <h1>Otsikko</h1>
+            <p>Tämä on kortti</p>
+            <button onclick="nayta()">Klikkaa painiketta</button>
+            <!-- Ilmoitus laatikon sisällä -->
+            <p id="teksti" class="ilmoitus">Klikattu!</p>
+                
+            <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+            <h2>Kortin Otsikko</h2>
+            <p>Tämä sivu toimii nyt palvelimellasi ja näyttää vaaleanpunaisen korostuksen</p> 
+            <button onclick="naytaVirhe()">Kriittinen toiminto</button>
+            <!-- Danger-ilmoitus -->
+            <p id="virheTeksti" class="ilmoitus-danger">Danger! Toiminto epäonnistui.</p>
+        </article>
+    </div>
+
+    <script>
+        function nayta() {
+            // Näytetään vihreä klikattu-ilmoitus
+            document.getElementById("teksti").style.display = "block";
+        }
+        
+        function naytaVirhe() {
+            // Näytetään punainen danger-ilmoitus
+            document.getElementById("virheTeksti").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

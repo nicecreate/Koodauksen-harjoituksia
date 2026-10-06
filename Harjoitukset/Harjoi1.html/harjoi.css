@@ -1,0 +1,38 @@
+.ruudukko {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Peruslaatikko */
+.laatikko {
+    background-color: #adf797;  /* Vihreä tausta */
+    border: 2px solid #0f0f0f;  /* Musta reunaviiva */
+    padding: 30px;
+    margin: 30px;
+    border-radius: 15px;        /* Pyöristetyt kulmat */
+    max-width: 300px;           /* Laatikon leveys */
+    cursor: pointer;            /* Muuttaa kursorin kädeksi */
+    
+    /* Animaation pehmennys molempiin suuntiin (hover & fokus) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, outline 0.2s ease;
+}
+
+/* Hover-efekti hiirelle (suurentuu pehmeästi) */
+.laatikko:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #999;
+}
+
+/* Näppäimistöfokus (kun laatikkoon siirrytään Tab-näppäimellä) */
+.laatikko:focus-visible {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #999;
+    outline: 3px solid #0056b3; /* Tyylikäs sininen korostusreuna */
+    outline-offset: 4px;
+}
+
+

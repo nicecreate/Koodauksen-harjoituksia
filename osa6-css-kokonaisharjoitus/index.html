@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurssikortit Flexboxilla</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">SIIRRY PÄÄSISÄLTÖÖN</a>
+  <header class="site-header" id="top">
+    <a class="brand" href="index.html">CSS-PROJEKTI</a>
+    <nav aria-label="Päänavigaatio">
+      <ul class="nav-list">
+        <li><a href="index.html" aria-current="page">ETUSIVU</a></li>
+        <li><a href="pages/tietoa.html">TIETOA</a></li>
+        <li><a href="#cards">SISÄLTÖ</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content">
+    <section class="hero">
+      <p class="eyebrow">CSS-KOKONAISHARJOITUS 6</p>
+      <h1>KURSSIKORTIT FLEXBOXILLA</h1>
+      <p class="hero__lead">SIVUN RAKENNE, KOMPONENTIT JA SISÄLTÖ ON TARKOITETTU CSS-HARJOITTELUUN.</p>
+      <a class="button button--primary" href="#cards">TUTUSTU SISÄLTÖÖN</a>
+    </section>
+    <section class="content-section" id="cards">
+      <h2>AJANKOHTAISET SISÄLLÖ<Td></Td></h2>
+      <div class="card-list">
+      <article class="card">
+        <span class="card__badge">01</span>
+        <h3 class="card__title">SISÄLTÖKORTTI 1</h3>
+        <p class="card__text">KORTIN SISÄLTÖ JOUSTAA JA SÄILYY LUETTAVANA ERI TILANTEISSA.</p>
+        <a class="button" href="#">LUE LISÄÄ</a>
+      </article>
+      <article class="card card--featured">
+        <span class="card__badge">02</span>
+        <h3 class="card__title">SISÄLTÖKORTTI 2</h3>
+        <p class="card__text">KORTIN SISÄLTÖ JOUSTAA JA SÄILYY LUETTAVANA ERI TILANTEISSA.</p>
+        <a class="button" href="#">LUE LISÄÄ</a>
+      </article>
+      <article class="card">
+        <span class="card__badge">03</span>
+        <h3 class="card__title">SISÄLTÖKORTTI 3</h3>
+        <p class="card__text">KORTIN SISÄLTÖ JOUSTAA JA SÄILYY LUETTAVANA ERI TILANTEISSA.</p>
+        <a class="button" href="#">LUE LISÄÄ</a>
+      </article>
+      </div>
+    </section>
+  </main>
+  <button class="help-button" type="button" aria-label="Avaa ohje">?</button>
+  <footer class="site-footer"><p>CSS-KOKONAISHARJOITUS · OSA 6</p></footer>
+</body>
+</html>

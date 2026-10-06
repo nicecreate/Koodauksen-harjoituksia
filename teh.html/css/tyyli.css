@@ -1,0 +1,61 @@
+.card {
+    position: relative;
+
+    /* Kortin tyylittelyä varten (voit muokata näitä) */
+    width: 300px;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    font-family: sans-serif;
+}
+
+/* Sijoitetaan badge 12px ylhäältä ja oikealta */
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    /* Badgen ulkoasu */
+    background-color: #3b82f6; /* sininen */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+} /* KORJATTU: Sulkeva aaltosulku lisätty tähän */
+
+/* KORJATTU: Kommentin aloitus muutettu muotoon /* 
+/* Otsikon tyylit, lisätty padding oikealle, ettei teksti mene badgen alle */
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    padding-right: 40px;
+    font-size: 20px;
+}
+
+.card p {
+    margin: 0;
+    color: #64748b;
+}
+
+.toolbar {
+    background-color: blanchedalmond;
+    position: sticky;
+    top: 0;
+    z-index: 100; /* KORJATTU: Nostettu arvoa, jotta pysyy varmasti muiden päällä */
+    left: 0;
+    width: 100%;
+} /* KORJATTU: Sulkeva aaltosulku lisätty tähän */
+ 
+.help {
+    position: fixed;
+    right: 20px; 
+    bottom: 20px; 
+    background-color: #ffffff;
+    padding: 15px 25px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); 
+    z-index: 9999; 
+}
+
+
+

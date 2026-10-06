@@ -1,0 +1,17 @@
+li {
+    display: inline-block;
+    background: gold;
+    color: navy;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+nav a{
+    text-decoration: none;
+}
+nav li:hover{
+    background-color: navy;
+    color: gold;
+    transform: translate(5px, -5px);
+}

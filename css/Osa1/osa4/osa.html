@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Esimerkki</title>
+
+    <style>
+        /* --- TÄSTÄ ALKAA FLEXBOX-ESIMERKKI --- */
+
+        /* 1. Navigaatiolistan muuttaminen Flex-kontiksi */
+        nav ul {
+            display: flex;
+            list-style: none; /* Poistaa pallorivit */
+            padding: 0;
+            gap: 20px;       /* Jättää 20px välin linkkien väliin */
+            align-items: center; /* Keskittää linkit ja napin pystysuunnassa */
+        }
+
+        /* LISÄTTY: Siirretään kirjaudu-nappi oikeaan reunaan */
+        .login-item {
+            margin-left: auto; 
+        }
+
+        /* LISÄTTY: Tyylitellään kirjaudu-nappi näyttämään hienolta */
+        .btn-login {
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .btn-login:hover {
+            background-color: #0056b3; /* Tummenee, kun hiiri on päällä */
+        }
+
+        /* 2. Korttien (cards) laittaminen vierekkäin */
+        .cards {
+            display: flex;
+            gap: 20px;       /* Väli korttien väliin */
+            width: 100%;
+            flex-wrap: wrap; /* Sallitaan korttien rivittyminen, jos tila loppuu kesken */
+        }
+
+        .card {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            flex: 1 1 16rem;         /* Tekee korteista tasalevyisiä (grow, shrink, basis) */
+            text-align: center;
+        }
+
+        /* Span-elementtien tyylit havainnollistamista varten */
+        .box, .inline {
+            background-color: lightblue;
+            padding: 5px 10px;
+            margin: 5px;
+            display: inline-block; /* Alkuperäinen span on inline, inline-block tottelee marginaaleja */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">ETUSIVU</a></li>
+                <li><a href="#">KURSSIT</a></li>    
+                <li><a href="#">YHTEYS</a></li>
+                <!-- LISÄTTY: Kirjaudu-nappi osaksi navigaatiolistaa -->
+                <li class="login-item"><a href="#" class="btn-login">Kirjaudu</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Box</h2>
+    <span class="box">A</span>
+    <span class="box">B</span>
+    <span class="box">C</span>
+    
+    <h2>Inline</h2>
+    <span class="inline">A</span>
+    <span class="inline">B</span>
+    <span class="inline">C</span>
+    <span class="inline">D</span>
+    <span class="inline">E</span>
+    <span class="inline">F</span>
+
+    <h2>Kortit (Flexbox)</h2>
+    <section class="cards">
+        <article class="card">HTML</article>
+        <article class="card">CSS</article>
+        <article class="card">JavaScript</article>
+    </section>
+</body>
+</html>
+
+
+
+
+
+
+

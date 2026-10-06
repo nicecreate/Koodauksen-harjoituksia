@@ -1,0 +1,56 @@
+styless.css
+
+.page {
+    /* Korvattu kiinteä 1200px joustavalla tarkaisulla */
+    width: 100%; 
+    max-width: 1200px;
+    margin: 0 auto; /* Keskittää sivun suuremmilla näytöillä */
+    padding: 0 20px; /* Estää sisältöä osumasta ruudun reinoihin mobiilissa */
+    box-sizing: border-box;
+}
+.card { 
+    width: 100%;
+    max-width: 380px; 
+    min-height: 220px;} /* Muutettu height -> min-height, jotta teksti mahtuu, jos se rivittyy */
+
+h1 { 
+    
+    font-size: clamp(36px, 5vw + 1rem, 72px); 
+    line-height: 1.2;
+}
+
+.page {
+    width: 100%; 
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 0 20px; 
+    box-sizing: border-box;
+}
+
+/* UUSI: Automaattinen ruudukko korteille ilman breakpointteja */
+.card-grid {
+    display: grid;
+    /* Luo automaattisesti niin monta palstaa kuin tilaa riittää. 
+       Yhden palstan minimileveys on 280px ja maksimi ottaa tasaisesti jäljellä olevan tilan (1fr). */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; /* Korttien välinen rako */
+    margin-top: 40px; /* Väli otsikon ja korttien välillä */
+}
+
+.card { 
+    width: 100%;
+    /* max-width: 380px; <- Voit ottaa tämän pois, jotta grid ohjaa leveyttä tasaisesti, 
+       tai jättää sen, jos et halua korttien venyvän liikaa jättiruuduilla */
+    max-width: 380px; 
+    min-height: 220px;
+    
+    /* Lisätään hieman taustaa ja paddingia, jotta kortit erottuvat */
+    background-color: #f5f5f5;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 { 
+    font-size: clamp(36px, 5vw + 1rem, 72px); 
+    line-height: 1.2;
+}

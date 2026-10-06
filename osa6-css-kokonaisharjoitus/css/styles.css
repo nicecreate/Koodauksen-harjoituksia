@@ -1,0 +1,74 @@
+/* CSS-kokonaisharjoitus, osa 6 */
+
+/* Aloita CSS:n kirjoittaminen tämän kommentin alta. */
+body {
+
+    --taustaväri: #e3d2eb;
+    font-family: var(--paafontti);
+    background-color: var(--taustaväri);
+    color: var(--tekstiväri);
+    line-height: 1.3;
+}
+
+/* Pieni laatikko numerolle otsikon yläpuolelle */
+.card__badge {
+    display: table;           
+    border: 1px solid black;  
+    background-color: rgb(230, 255, 224);   
+    padding: 2px 8px;         
+    border-radius: 4px;       
+    margin-bottom: 5px;       
+    font-size: 0.85rem;       
+    font-weight: bold;        
+}
+
+/* Otsikon laatikko */
+.card__title {
+    display: inline-block;
+    border: 2px solid black;
+    background-color: aquamarine;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    
+}
+/* Koko sisältökorttien tausta ja sisätila */
+.card {
+    background-color: lightcyan; 
+    padding: 20px;             
+    border-radius: 8px;        
+    border: 1px solid lightskyblue;  
+    flex: 1;  
+    display: flex;
+    flex-direction: column;
+    min-height: 350px;
+    
+}
+/* Tyylitellään Lue lisää -painikkeet */
+.button {
+    display: inline-block;
+    background-color: #4a154b; /* Tumma lila taustaväri painikkeelle */
+    color: #ffffff;            /* Valkoinen teksti */
+    text-decoration: none;     /* Poistaa linkin oletusalleviivauksen */
+    padding: 10px 20px;        /* Sisätilaa: ylös/alas 10px, sivuille 20px */
+    border-radius: 6px;        /* Pyöristetyt kulmat */
+    font-weight: bold;         /* Paksu teksti */
+    margin-top: auto;          /* Pakottaa painikkeet aina kortin alareunaan tasaisesti */
+    text-align: center;        /* Keskittää tekstin */
+    transition: background-color 0.2s ease; /* Pehmeä värinvaihtoefekti */
+}
+
+/* Painikkeen väri, kun hiiri viedään sen päälle */
+.button:hover {
+    background-color: #6b246d; /* Hieman vaaleampi lila aktiivisena */
+}
+
+
+/* Korttien asettelu rinnakkain */
+.card-list {
+    display: flex;
+    gap: 20px;
+}
+
+

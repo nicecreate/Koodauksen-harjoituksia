@@ -1,0 +1,31 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: navy;
+}
+.korostettu-teksti {
+    color: greenyellow;
+    font-size: 20px;
+    font-weight: bold;
+} 
+
+#paavalikko {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+}
+#paavalikko a {
+        color: white;
+        text-decoration: none;
+        margin-right: 10px;
+}
+.kortti {
+    width: 80%;
+    max-width: 400px;
+    padding: 1.5rem;
+    border: 3px solid;
+    font-size: 1.2rem;
+}

@@ -1,0 +1,95 @@
+:root {
+    /* Rivivälijärjestelmä */
+    --leading-body: 1.65;
+    --leading-heading: 1.2;
+    --text-h2: 2rem; /* LISÄTTY PUUTTUVA MUUTTUJA */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #fafafa; /* vaaleanharmaa */
+    color: #222; /* tummanharmaa */
+    padding: 2rem; /* Lisätty hieman ilmaa sivuille */
+}
+
+/* Rajaamaan tekstialueen leveys, jotta pitkää tekstiä on mukava lukea */
+article {
+    max-width: 65ch; /* KORJATTU (oli 1.65) */
+    line-height: var(--leading-body);
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: sans-serif;
+    font-size: clamp(2rem, 4vw + 1rem, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.05rem;
+    color: #f10808; /* punainen */
+    line-height: var(--leading-heading);
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-family: helvetica, sans-serif;
+    font-size: var(--text-h2); /* Toimii nyt, kun muuttuja on juuressa */
+    font-weight: 900;
+    letter-spacing: 1.6rem;
+    color: #0ce24c; /* vihreä */
+    line-height: var(--leading-heading);
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-family: helvetica, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 0.05rem;
+    color: #f509a6; /* pinkki */
+    line-height: var(--leading-heading);
+    margin-bottom: 1rem;
+}
+
+/* Koodilohkojen tyylittely */
+pre {
+    background-color: #0cf718;
+    color: #0e3d57;
+    padding: 1rem;
+    border-radius: 8px; /* Korjattu 6rem -> 8px, jotta laatikko ei muutu soikioksi */
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 2rem;
+}
+
+code {
+    background-color: #0cf718;
+    color: #0a0a0a;
+    padding: 0.2rem 0.4rem;
+    border: #f10808 solid 0.1rem;
+    border-radius: 0.2rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* JOUSTAVA KORTTI (KORJATTU JA MUUTETTU LUOKAKSI) */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-top: 2rem;
+}
+
+.card h2 {
+    font-size: 1.75rem; /* Korjattu 8rem -> 1.75rem, jotta mahtuu korttiin */
+    color: #222;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.card a {
+    text-decoration: underline;
+    color: #0066cc;
+    font-weight: bold;
+} /* LISÄTTY PUUTTUVA SULKU */
+
+

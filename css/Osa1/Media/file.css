@@ -1,0 +1,97 @@
+/* 1. Perustyylit: Kortit ovat oletuksena allekkain (esim. puhelimella) */
+.features {
+  display: grid;
+  gap: 1rem;
+}
+
+/* 2. Tietokoneen näyttö: Kortit menevät 3 sarakkeeseen vierekkäin */
+@media (min-width: 48rem) {
+  .features { 
+    grid-template-columns: repeat(3, 1fr); 
+    font-size: 1 1.5;
+  }
+}
+
+/* 3. Vaihtoehtoinen Flexbox-tyyli (jos käytät tätä luokkaa HTML-koodissa) */
+.ominaisuudet {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Ulompi säiliö */
+.ominaisuudet {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Yksittäinen kortti */
+.kortti {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efekti hiiren ollessa päällä */
+.kortti:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Ikoni */
+.ikoni {
+  display: block; /* Varmistaa, että ikoni rivittyy otsikon yläpuolelle */
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* Otsikko */
+.kortti h3 {
+  font-size: 22px;
+  color: #333333;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+}
+
+/* Teksti */
+.kortti p {
+  font-size: 16px;
+  color: #666666;
+  line-height: 1.5;
+  font-family: sans-serif;
+}
+
+/* Mobiilivaste: allekkain puhelimella */
+@media (max-width: 768px) {
+  .ominaisuudet {
+    flex-direction: column;
+  }
+}
+

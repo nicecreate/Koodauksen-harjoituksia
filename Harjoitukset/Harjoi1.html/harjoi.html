@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ruudukko {
+            display: grid;
+            grid-template-columns: repeat(2, max-content);
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .laatikko {
+            background-color: #adf797;
+            border: 2px solid #0f0f0f;
+            padding: 30px;
+            margin: 30px 30px;
+            border-radius: 15px;
+            max-width: 300px;
+        }
+        .laatikko:hover {
+            transition: all 0.3s ease;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-color: #999;
+        }
+        .laatikko:focus-visible {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-color: #999;
+            outline: 2px solid #000;
+            outline-offset: 4px;
+        }
+    </style>
+</head>
+<body>
+    <section class="laatikko">
+        <h1>Harjoitus 1</h1>
+        <p>Tämä on harjoitus 1.</p>
+    </section>
+
+    <section class="laatikko">
+        <h1>Harjoitus 2</h1>
+        <p>Tämä on harjoitus 2.</p>
+    </section>
+
+    <section
+    class="laatikko">
+            <h1>Harjoitus 3</h1>
+            <p>Tämä on harjoitus 3.</p>
+    </section>
+
+    <section class="laatikko">
+        <h1>Harjoitus 4</h1>
+        <p>Tämä on harjoitus 4.</p> 
+    </section>
+</body>
+</html>

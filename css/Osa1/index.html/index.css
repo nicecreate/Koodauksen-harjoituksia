@@ -1,0 +1,51 @@
+/* Muotoillaan antamasi <section class="card"> */
+.card {
+    background-color: #ffffff;
+    
+    /* Reunat ja kulmien pyöristys */
+    border: 2px solid #222222;
+    border-radius: 12px;
+    
+    /* Joustava korkeus ja leveysrajoitukset */
+    min-height: 220px;
+    width: 100%;
+    max-width: 350px;
+    
+    /* Sisäväli (padding) rem-yksikköinä, jotta teksti ei osu reunoihin */
+    padding: 1.5rem;
+    
+    /* Tuodaan kortti irti taustasta pehmeällä varjolla */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    /* Flexbox-asettelu, joka keskittää sisällön pystysuunnassa */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Responsiivinen otsikko clamp-funktiolla */
+.card h1 {
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    margin-top: 0;
+    color: #111111;
+}
+
+/* Muutetaan "Paina Tästä" -teksti näyttämään oikealta painikkeelta */
+.card p {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 0;
+    font-weight: bold;
+    cursor: pointer;
+    
+    /* Animointi, kun hiiri viedään päälle */
+    transition: background-color 0.2s ease;
+}
+
+/* Painikkeen reaktio, kun hiiri viedään sen päälle */
+.card p:hover {
+    background-color: #0056b3;
+}

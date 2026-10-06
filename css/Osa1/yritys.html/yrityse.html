@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juhlakattaus Katarina — Hää- & Juhlasuunnittelu</title>
+    <style>
+        @import url('https://googleapis.com');
+
+        :root {
+            --bg: #fbf9f6;          /* Erittäin vaalea, pehmeä kerman sävy */
+            --text-dark: #1c1c1c;   /* Lähes musta, syvä sävy tekstille */
+            --text-muted: #6e6a64;  /* Hienovarainen harmaanruskea apu- ja leipätekstille */
+            --line: #e6e1d8;        /* Erittäin ohut ja huomaamaton viiva rakenteille */
+            --serif: 'Cormorant Garamond', serif;
+            --sans: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-dark);
+            font-family: var(--sans);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Ylänavigaatio */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 6%;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .logo {
+            font-family: var(--serif);
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        nav a {
+            font-size: 0.85rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-left: 30px;
+            font-weight: 400;
+        }
+
+        /* Hero / Aloitusosio häälehden tyylillä */
+        .hero-editorial {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 6% 140px 6%;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-family: var(--serif);
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 1.1;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .hero-text h1 em {
+            font-style: italic;
+        }
+
+        .hero-text p {
+            font-family: var(--sans);
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            max-width: 480px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* Minimalistinen tekstilinkki painikkeen sijaan */
+        .editorial-link {
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            border-bottom: 1px solid var(--text-dark);
+            padding-bottom: 6px;
+            transition: opacity 0.3s;
+        }
+
+        .editorial-link:hover {
+            opacity: 0.6;
+        }
+
+        /* Hero-osion suuri, herkkä tunnelmakuva */
+        .hero-image-wrapper {
+            width: 100%;
+            height: 600px;
+            background: url('https://unsplash.com') center/cover no-repeat;
+            filter: grayscale(15%);
+        }
+
+        /* Palveluosio: Asymmetrinen listaus laatikoiden sijaan */
+        .services-editorial {
+            border-top: 1px solid var(--line);
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 6%;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            margin-bottom: 60px;
+            display: block;
+        }
+
+        /* Rivipohjainen asettelu perinteisten korttien sijaan */
+        .service-row {
+            display: grid;
+            grid-template-columns: 0.4fr 1fr 1.5fr;
+            padding: 40px 0;
+            border-bottom: 1px solid var(--line);
+            align-items: baseline;
+            position: relative; /* Containing block mahdollista hienovaraista merkintää varten */
+        }
+
+        .service-number {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--text-muted);
+        }
+
+        .service-title {
+            font-family: var(--serif);
+            font-size: 1.8rem;
+            font-weight: 400;
+        }
+
+        .service-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-weight: 300;
+            padding-right: 40px;
+        }
+
+        /* Erittäin hillitty absolute-badge suosituimmalle riville */
+        .row-badge {
+            position: absolute;
+            top: 45px;
+            right: 0;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #b38d46; /* Kevyt kulta */
+            font-weight: 500;
+        }
+
+        /* Lopetus / Yhteys */
+        .footer-editorial {
+            background-color: #f5f2eb; /* Hieman tummempi hiekan sävy */
+            padding: 120px 6%;
+            text-align: center;
+            border-top: 1px solid var(--line);
+        }
+
+        .footer-editorial h2 {
+            font-family: var(--serif);
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .footer-editorial p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Katarina</div>
+        <nav>
+            <a href="#palvelut">Palvelut</a>
+            <a href="#yhteys">Yhteys</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero-editorial">
+        <div class="hero-text">
+            <h1>Luodaan yhdessä jotain <em>unohtumatonta</em>.</h1>
+            <p>Juhlakattaus Katarina suunnittelee ja koordinoi elämänne tärkeimmät juhlat Päijät-Hämeen alueella. Keskity nauttimiseen – minä huolehdun yksityiskohdista.</p>
+            <a href="#yhteys" class="editorial-link">Varaa maksuton konsultaatio</a>
+        </div>
+        <div class="hero-image-wrapper"></div>
+    </section>
+
+    <!-- PALVELUT RIVEINÄ -->
+    <section id="palvelut" class="services-editorial">
+        <span class="section-label">Palvelukokonaisuudet</span>
+
+        <div class="service-row">
+            <span class="service-number">01</span>
+            <h3 class="service-title">Aloituspaketti</h3>
+            <p class="service-desc">Yhteinen tapaaminen ja palveluntarjoajien kartoitus. Täydellinen startti sinulle, joka haluat selkeät suuntaviivat ja ammattilaisen neuvot oman suunnittelun pohjaksi.</p>
+        </div>
+
+        <div class="service-row">
+            <!-- Tässä rivissä käytetään absolute positionia ilman raskaita laatikoita -->
+            <span class="row-badge">Suosituin valinta</span>
+            <span class="service-number">02</span>
+            <h3 class="service-title">Kokonaisvaltainen suunnittelu</h3>
+            <p class="service-desc">Täydellinen avaimet käteen -palvelu. Huolehdin puolestasi kaikesta: budjetoinnista, visuaalisesta ilmeestä, aikatauluista sekä tavarantoimittajien koordinoinnista juhlapäivään saakka.</p>
+        </div>
+
+        <div class="service-row">
+            <span class="service-number">03</span>
+            <h3 class="service-title">Hääpäivän koordinointi</h3>
+            <p class="service-desc">Huolehdin siitä, että juhlapäivänne etenee käsikirjoituksen mukaan. Toimin tarvittaessa seremoniamestarina ja ratkon taustalla kaikki tilanteet, jotta voitte vain juhlia.</p>
+        </div>
+    </section>
+
+    <!-- YHTEYSTIEDOT -->
+    <section id="yhteys" class="footer-editorial">
+        <h2>Aloitetaanko suunnittelu?</h2>
+        <p>Tarjoan 30 minuutin maksuttoman etäkonsultaation, jossa kartoitamme juhlanne tarpeet.</p>
+        <a href="mailto:info@juhlakatarina.fi" class="editorial-link" style="font-size: 1.1rem;">Ota yhteyttä sähköpostitse</a>
+        
+        <p style="margin-top: 60px; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;">
+            Ira Selonen &nbsp;·&nbsp; 040 419 5845 &nbsp;·&nbsp; Päijät-Häme
+        </p>
+    </section>
+
+</body>
+</html>

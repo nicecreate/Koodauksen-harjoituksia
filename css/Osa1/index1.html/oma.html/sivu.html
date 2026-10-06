@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koodiopas: Jaettu Näkymä</title>
+    <style>
+        /* Perusasetukset ja ulkoasu */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f5f7fb;
+        }
+
+        header {
+            background-color: #1e1e2f;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Pääkontti, joka jakaa sivun kahtia */
+        .container {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* Vasen puoli: Koodi */
+        .code-side {
+            flex: 1;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            overflow-y: auto;
+            border-right: 2px solid #333;
+        }
+
+        /* Oikea puoli: Selitys */
+        .explanation-side {
+            flex: 1;
+            background-color: #ffffff;
+            color: #333;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        /* Koodirivien ja selitysten ryhmittely */
+        .row {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: stretch;
+        }
+
+        /* Koodityylit */
+        .code-block {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2d2d2d;
+            padding: 15px;
+            border-radius: 6px;
+            width: 100%;
+            border-left: 4px solid #007acc;
+            font-size: 14px;
+            white-space: pre-wrap;
+        }
+
+        /* Selitystyylit */
+        .explain-block {
+            background-color: #eef2f7;
+            padding: 15px;
+            border-radius: 6px;
+            width: 100%;
+            border-left: 4px solid #28a745;
+            font-size: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .explain-block h3 {
+            margin-bottom: 5px;
+            color: #007acc;
+        }
+
+        /* Mobiiliresponsiivisuus (alle 768px levyisille näytöille) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .code-side, .explanation-side {
+                flex: none;
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>HTML & CSS -Koodiselittäjä</h1>
+        <p>Vasemmalla puolella on koodi ja oikealla puolella sen tarkoitus.</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- VASEN PUOLI: KOODIT -->
+        <div class="code-side">
+            <h2 style="margin-bottom: 20px; color: #569cd6;">Lähdekoodi</h2>
+            
+            <!-- Rivi 1 -->
+            <div class="row">
+                <div class="code-block">
+<span style="color: #569cd6;">&lt;button</span> <span style="color: #9cdcfe;">class</span>=<span style="color: #ce9178;">"btn-lataa"</span><span style="color: #569cd6;">&gt;</span>
+    Lataa tiedosto
+<span style="color: #569cd6;">&lt;/button&gt;</span>
+                </div>
+            </div>
+
+            <!-- Rivi 2 -->
+            <div class="row">
+                <div class="code-block">
+<span style="color: #dcdcaa;">.btn-lataa</span> {
+    <span style="color: #9cdcfe;">background-color</span>: <span style="color: #ce9178;">#4CAF50</span>;
+    <span style="color: #9cdcfe;">color</span>: <span style="color: #ce9178;">white</span>;
+    <span style="color: #9cdcfe;">padding</span>: <span style="color: #b5cea8;">10px 20px</span>;
+}
+                </div>
+            </div>
+
+            <!-- Rivi 3 -->
+            <div class="row">
+                <div class="code-block">
+<span style="color: #6a9955;">&lt;!-- Kommentti koodissa --&gt;</span>
+<span style="color: #569cd6;">&lt;img</span> <span style="color: #9cdcfe;">src</span>=<span style="color: #ce9178;">"kuva.jpg"</span> <span style="color: #9cdcfe;">alt</span>=<span style="color: #ce9178;">"Maisema"</span><span style="color: #569cd6;">&gt;</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- OIKEA PUOLI: SELITYKSET -->
+        <div class="explanation-side">
+            <h2 style="margin-bottom: 20px; color: #28a745;">Mitä koodi tekee?</h2>
+            
+            <!-- Selitys 1 -->
+            <div class="row">
+                <div class="explain-block">
+                    <h3>HTML-Painike (Button)</h3>
+                    <p>Tämä luo verkkosivulle tavallisen klikattavan painikkeen, jossa lukee teksti "Lataa tiedosto". Luokka (class) auttaa meitä tyylittelemään sen myöhemmin.</p>
+                </div>
+            </div>
+
+            <!-- Selitys 2 -->
+            <div class="row">
+                <div class="explain-block">
+                    <h3>CSS-Tyylittely</h3>
+                    <p>Tämä muuttaa aiemmin luodun painikkeen taustavärin vihreäksi (<code>#4CAF50</code>), tekstin valkoiseksi ja lisää painikkeen sisälle hieman tyhjää tilaa (padding) reunoille.</p>
+                </div>
+            </div>
+
+            <!-- Selitys 3 -->
+            <div class="row">
+                <div class="explain-block">
+                    <h3>Kuvaelementti</h3>
+                    <p>Tämä tuo sivulle kuvan. <code>src</code> määrittää kuvan tiedostopolun ja <code>alt</code>-teksti näytetään, jos kuva ei lataudu (tärkeä myös ruudunlukijoille).</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
